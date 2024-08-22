@@ -13,10 +13,8 @@ public class Main {
         inimigos.add(new Personagem("Goblin", 50, 5));
         inimigos.add(new Personagem("Lobo", 75, 15));
 
-        // Criando o jogador
         Personagem jogador = new Personagem("Steve", 100, 20);
 
-        // Loop principal do jogo
         Random random = new Random();
         while (jogador.getVida() > 0 && !inimigos.isEmpty()) {
             // Jogador ataca um inimigo aleatório
