@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$USER_HOME$/Downloads/exercicio07/exercicio07/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Downloads/exercicio07/exercicio07/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Atividade01/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Atividade01/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Atividade02/src/main/java" charset="UTF-8" />
@@ -9,9 +11,16 @@
     <file url="file://$PROJECT_DIR$/Atividades01/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back-end/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back-end/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/exemplo5/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/exemplo5/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/exercicio01/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/exercicio01/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/exercicio03/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/exercicio03/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/exercicio04/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/exercicio04/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/exercicio06/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/exercicio06/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/exercicio07/src/main/java" charset="UTF-8" />
   </component>
 </project>
