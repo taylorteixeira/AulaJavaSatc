@@ -1,42 +1,28 @@
 package com.example.transacao.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.example.transacao.dto.ContaDTO;
 import com.example.transacao.dto.TransacaoRequestDTO;
 import com.example.transacao.dto.TransacaoResponseDTO;
 import com.example.transacao.mapper.ContaMapper;
-import com.example.transacao.modelo.Conta;
-import com.example.transacao.modelo.Transacao;
-import com.example.transacao.servico.TransacoesService;
+import com.example.transacao.model.Transacao;
+import com.example.transacao.service.TransacoesService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/transacoes")
 public class TransacaoController {
+
     @Autowired
     private TransacoesService transacoesService;
 
-    @PostMapping("/transacao")
-    public ResponseEntity<TransacaoResponseDTO> realizarTransacao(@RequestBody TransacaoRequestDTO request) {
-        Conta origem = transacoesService.getContaByCodigo(request.getOrigem());
-        Conta destino = transacoesService.getContaByCodigo(request.getDestino());
+    @PostMapping
+    public TransacaoResponseDTO gerarTransacao(@RequestBody TransacaoRequestDTO transacaoRequest) {
+        Transacao transacao = transacoesService.gerarTransacao(transacaoRequest);
 
-        if (origem == null || destino == null) {
-            return ResponseEntity.badRequest().build();
-        }
+        ContaDTO origemDTO = ContaMapper.toContaDTO(transacao.getOrigem());
+        ContaDTO destinoDTO = ContaMapper.toContaDTO(transacao.getDestino());
 
-        Transacao transacao = new Transacao(origem, destino, request.getValor());
-        origem.setSaldo(origem.getSaldo() - request.getValor());
-        destino.setSaldo(destino.getSaldo() + request.getValor());
-
-        ContaDTO origemDTO = ContaMapper.toDTO(origem);
-        ContaDTO destinoDTO = ContaMapper.toDTO(destino);
-
-        TransacaoResponseDTO response = new TransacaoResponseDTO(origemDTO, destinoDTO, request.getValor());
-
-        return ResponseEntity.ok(response);
+        return new TransacaoResponseDTO(origemDTO, destinoDTO, transacao.getValor());
     }
 }
